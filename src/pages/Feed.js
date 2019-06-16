@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import api from '../services/api'
 import io from 'socket.io-client'
+import baseService from '../services/BaseService'
 
 import './Feed.css'
 import more from '../assets/more.svg'
 import like from '../assets/like.svg'
 import comment from '../assets/comment.svg'
 import send from '../assets/send.svg'
+import BaseService from '../services/BaseService';
 
 
 
@@ -17,6 +19,7 @@ class Feed extends Component {
     }
 
     async componentDidMount(){
+        this.baseService = new BaseService()
         this.registerToSocket()
         const response = await api.get('posts')
 
@@ -55,7 +58,7 @@ class Feed extends Component {
                        <img src={more} alt="Mais"/>
                    </header>
 
-                   <img src={`http://localhost:3333/files/${post.image}`} alt=""/>
+                   <img src={`${this.baseService}/files/${post.image}`} alt=""/>
 
                    <footer>
                        <div className="actions">
