@@ -19,7 +19,6 @@ class Feed extends Component {
     }
 
     async componentDidMount(){
-        this.baseService = new BaseService()
         this.registerToSocket()
         const response = await api.get('posts')
 
@@ -58,7 +57,7 @@ class Feed extends Component {
                        <img src={more} alt="Mais"/>
                    </header>
 
-                   <img src={`${this.baseService}/files/${post.image}`} alt=""/>
+                   <img src={`${BaseService()}/files/${post.image}`} alt=""/>
 
                    <footer>
                        <div className="actions">

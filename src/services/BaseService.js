@@ -1,7 +1,4 @@
-export default class BaseService {
-    
-        constructor() {
-            this.baseUrl = 'https://instagram-teste.herokuapp.com/'
-        }
+export default function BaseService () {
+        return  'https://instagram-teste.herokuapp.com/'
     
     }
