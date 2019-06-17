@@ -8,7 +8,7 @@ import more from '../assets/more.svg'
 import like from '../assets/like.svg'
 import comment from '../assets/comment.svg'
 import send from '../assets/send.svg'
-import BaseService from '../services/BaseService';
+
 
 
 
@@ -57,7 +57,7 @@ class Feed extends Component {
                        <img src={more} alt="Mais"/>
                    </header>
 
-                   <img src={`${process.env.REACT_APP_API_URL}/files/${post.image}`} alt=""/>
+                   <img src={`${process.env.REACT_APP_API_URL}files/${post.image}`} alt=""/>
 
                    <footer>
                        <div className="actions">
