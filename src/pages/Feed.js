@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../services/api'
 import io from 'socket.io-client'
-import baseService from '../services/BaseService'
+
 
 import './Feed.css'
 import more from '../assets/more.svg'
@@ -57,7 +57,7 @@ class Feed extends Component {
                        <img src={more} alt="Mais"/>
                    </header>
 
-                   <img src={`${BaseService()}/files/${post.image}`} alt=""/>
+                   <img src={`${process.env.REACT_APP_API_URL}/files/${post.image}`} alt=""/>
 
                    <footer>
                        <div className="actions">
